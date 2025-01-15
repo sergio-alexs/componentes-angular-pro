@@ -1,0 +1,27 @@
+<ng-container *ngIf="visible">
+  <!-- Esta parte se renderiza solo si 'visible' es true -->
+
+  <!-- Fondo de la tarjeta de alerta -->
+  <div class="background"></div>
+
+  <div class="card">
+
+    <!-- Título de la alerta -->
+    <div class="header">
+      {{title}}
+    </div>
+
+    <!-- Mensaje de la alerta -->
+    <div class="message">
+      {{message}}
+    </div>
+
+    <!-- Botón de acción en el pie de la alerta -->
+    <div class="footer">
+      <!-- El botón ejecuta la función dismiss() al ser clickeado -->
+      <button (click)="dismiss()">Ok</button>
+    </div>
+
+  </div>
+
+</ng-container>

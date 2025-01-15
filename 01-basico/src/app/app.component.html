@@ -1,0 +1,23 @@
+<h1>
+  <!-- Barra de progreso que muestra el porcentaje de la cuenta atrás -->
+  <app-progress-bar [progress]="counterProgress"></app-progress-bar>
+
+  <!-- Componente Countdown que muestra el temporizador y emite eventos -->
+  <!-- Referencia local al componente Countdown -->
+  <!-- Valor inicial de la cuenta atrás -->
+  <!-- Evento que actualiza el progreso cuando el contador disminuye -->
+  <!-- Evento que se dispara cuando la cuenta atrás finaliza -->
+  <app-countdown #countdown [init]="totalCountdown" (onDecrease)="updateProgress($event)"
+    (onComplete)="countdownFinished()"></app-countdown>
+
+  <!-- Entrada para permitir al usuario establecer un valor inicial para la cuenta atrás -->
+  <!-- Etiqueta para la entrada -->
+  <!-- Two-way binding con la propiedad totalCountdown -->
+  <div class="initInput">
+    <label for="totalCountdown">Init on: </label>
+    <input id="totalCountdown" type="text" [(ngModel)]="totalCountdown">
+  </div>
+
+  <!-- Botón para reiniciar la cuenta atrás y la barra de progreso -->
+  <button (click)="countdown.startCountdown(); counterProgress=0;">RESTART</button>
+</h1>

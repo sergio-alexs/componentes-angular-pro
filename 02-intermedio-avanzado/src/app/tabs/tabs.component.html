@@ -1,0 +1,13 @@
+<ul>
+  <!-- Itera sobre la lista de 'tabs' y crea un <li> por cada pestaña -->
+  <!-- Si la pestaña está activa, se le agrega la clase 'active' -->
+  <li *ngFor="let tab of tabs" [ngClass]="{'active':tab.isActive}" (click)="selectTab(tab)">
+    <!-- Cuando se hace clic, se llama a selectTab(tab) -->
+    {{tab.title}} <!-- Muestra el título de la pestaña -->
+  </li>
+</ul>
+
+<div class="content">
+  <!-- El contenido que se proyecta dentro del componente se mostrará aquí -->
+  <ng-content></ng-content>
+</div>

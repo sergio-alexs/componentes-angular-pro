@@ -1,0 +1,23 @@
+<div>
+  <div class="background"></div> <!-- Contenedor de fondo para el componente, generalmente usado para darle un estilo de fondo o sombra. -->
+
+  <div class="card"> <!-- Card que contiene todo el contenido del componente. -->
+
+    <div class="header">
+      <!-- Sección del encabezado donde se proyecta el contenido con el atributo [header]. -->
+      <ng-content select="[header]"></ng-content>
+    </div>
+
+    <div class="message">
+      <!-- Aquí se proyecta el contenido principal que no tiene un selector específico. -->
+      <ng-content></ng-content>
+    </div>
+
+    <div class="footer">
+      <!-- Sección del pie donde se proyecta el contenido específico con el selector <button>. -->
+      <ng-content select="button"></ng-content>
+    </div>
+
+  </div>
+
+</div>
